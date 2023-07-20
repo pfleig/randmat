@@ -78,7 +78,7 @@ def Dirichlet_matrix(K, beta, N):
 
     return U
 
-def SDV_model(beta, N, T, m, p, S_type, V_type):
+def DV_model(beta, N, T, m, V_type):
     """Returns a random matrix with Dirichlet latent feature mixing.
 
     Args:
@@ -86,8 +86,6 @@ def SDV_model(beta, N, T, m, p, S_type, V_type):
         T: number of observations.
         m: number of latent features.
         beta: Dirichlet distribution hyperparameter.
-        p : if S_type is 'Bernoulli', p controls the evnet probability.
-        S_type : sets the type of modulation matrix.
         V_type : set the type of latent feature matrix.
 
     Returns:
@@ -95,13 +93,6 @@ def SDV_model(beta, N, T, m, p, S_type, V_type):
     """
 
     U = Dirichlet_matrix(m, beta, T)
-
-    if S_type == 'ones':
-        S = np.ones((T, m))
-    elif S_type == 'Bernoulli':  # +1 with probability p, -1 with probability 1-p
-        S = 2 * bernoulli.rvs(p, size=(T, m)) - np.ones((T, m))
-    elif S_type == 'exp':
-        S = np.random.exponential(1, (T, m))
 
     if V_type == 'Gaussian':
         V = np.random.normal(0., 1., (m, N))
@@ -112,6 +103,6 @@ def SDV_model(beta, N, T, m, p, S_type, V_type):
     elif V_type == 'exp_corr':
         pass
 
-    X = np.dot(np.multiply(S, U), V)
+    X = np.dot(U, V)
 
     return X

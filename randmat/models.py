@@ -86,7 +86,7 @@ def DV_model(beta, N, T, m, V_type):
         T: number of observations.
         m: number of latent features.
         beta: Dirichlet distribution hyperparameter.
-        V_type : set the type of latent feature matrix.
+        V_type : set type of the latent feature matrix.
 
     Returns:
         X: TxN matrix given by Dirichlet mixture of latent features.

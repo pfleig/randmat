@@ -24,7 +24,7 @@ A very brief tutorial showcasing functionality can be found [here](randmat_tutor
 
 ## Contact
 
-Questions should be addressed to [us](philipp.fleig@gmx.de).
+Questions should be addressed to [us](mailto:philipp.fleig@gmx.de).
 
 ## License
 

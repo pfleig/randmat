@@ -100,8 +100,6 @@ def DV_model(beta, N, T, m, V_type):
         V = 2 * bernoulli.rvs(0.5, size=(m, N)) - np.ones((m, N)) # +1 with probability 0.5, -1 with probability 0.5
     elif V_type == 'Dirichlet':
         V = Dirichlet_matrix(N, 0.1, m)
-    elif V_type == 'exp_corr':
-        pass
 
     X = np.dot(U, V)
 

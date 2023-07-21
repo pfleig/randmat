@@ -27,14 +27,14 @@ def corr_density(X, scale_data):
 
     Args:
         X: data matrix.
-        scale_data: boolean variable indictating whether the data is to be scaled.
+        scale_data: boolean variable indicating whether the data is to be scaled.
 
     Returns:
         density: density of correlation values of X.
     """
 
     # compute correlations
-    X = preprocessing.scale(X, axis=0, with_mean=True, with_std=scale_data)  # standardise columns of the data matrix
+    X = preprocessing.scale(X, axis=0, with_mean=True, with_std=scale_data)  # standardise matrix
     (n_rows, n_cols) = np.shape(X)
     corr_X = np.dot(np.transpose(X), X) / n_rows  # covariance matrix of the data
 

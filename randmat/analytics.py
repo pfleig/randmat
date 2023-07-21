@@ -1,5 +1,7 @@
 import numpy as np
+from scipy.stats import beta as beta_distr
 nax = np.newaxis
+
 
 def Gaussian(sig):
     """Computes the curve of a centered Gaussian with standard deviation sig.
@@ -16,6 +18,29 @@ def Gaussian(sig):
     gauss = lambda x: np.exp(-x**2/(2*sig**2)) / np.sqrt(2.*np.pi*sig**2)
 
     return x, gauss
+
+
+def Beta_distribution_GGmodel(m):
+    """Returns the (symmetric) Beta distribution of pairwise correlations of the GG model.
+
+    Args:
+        m: latent dimension of the GG model.
+
+    Returns:
+        x: discrete grid on which the distribution is computed.
+        Beta: function values of the Beta distribution.
+    """
+
+    loc = -1.
+    scale = 2.
+    alpha = (m-1.)/2.
+    beta = alpha
+
+    x_corr = np.linspace(-.999, .999, 1000)
+
+    Beta = beta_distr.pdf(x_corr, alpha, beta, loc, scale)
+
+    return x_corr, Beta
 
 
 def MP(q, sig=1.):

@@ -17,6 +17,7 @@ def G_model(T, N):
 
     return X
 
+
 def GG_model(N, T, m):
     """Returns a random matrix with Gaussian latent feature mixing.
 
@@ -35,6 +36,7 @@ def GG_model(N, T, m):
     X = np.dot(np.transpose(V), U)
 
     return X
+
 
 def dirichlet_draw(K, beta):
     """Returns a Dirichlet random vector.
@@ -59,6 +61,7 @@ def dirichlet_draw(K, beta):
 
     return q
 
+
 def Dirichlet_matrix(K, beta, N):
     """Returns a matrix with Dirichlet random vectors as rows.
 
@@ -77,6 +80,7 @@ def Dirichlet_matrix(K, beta, N):
         U[n, :] = r
 
     return U
+
 
 def DV_model(beta, N, T, m, V_type):
     """Returns a random matrix with Dirichlet latent feature mixing.

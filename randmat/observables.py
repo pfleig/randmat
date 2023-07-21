@@ -3,6 +3,7 @@ from sklearn import preprocessing
 from numpy import linalg as la
 nax = np.newaxis
 
+
 def correlation_matrix(X, scale_data):
     """Returns the correlation matrix.
 
@@ -21,6 +22,7 @@ def correlation_matrix(X, scale_data):
     corr_mat = np.dot(np.transpose(X), X) / n_rows
 
     return corr_mat
+
 
 def corr_density(X, scale_data):
     """Returns density of correlation values.
@@ -52,6 +54,7 @@ def corr_density(X, scale_data):
 
     return density
 
+
 def sorted_correlations(X, scale_data):
     """Returns the correlation values.
 
@@ -75,6 +78,7 @@ def sorted_correlations(X, scale_data):
     correlations = np.around(correlations, 9)
 
     return correlations
+
 
 def sorted_eigenvalues(X, scale_data):
     """Returns the eigenvalues of the correlation matrix.

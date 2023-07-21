@@ -27,7 +27,7 @@ def Beta_distribution_GGmodel(m):
         m: latent dimension of the GG model.
 
     Returns:
-        x: discrete grid on which the distribution is computed.
+        x_corr: discrete grid on which the distribution is computed.
         Beta: function values of the Beta distribution.
     """
 

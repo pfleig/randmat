@@ -15,7 +15,7 @@ def correlation_matrix(X, scale_data):
     """
 
     # compute correlations
-    X = preprocessing.scale(X, axis=0, with_mean=True, with_std=scale_data)  # standardise columns of the data matrix
+    X = preprocessing.scale(X, axis=0, with_mean=True, with_std=scale_data)  # standardise matrix
     n_rows = X.shape[0]
 
     corr_mat = np.dot(np.transpose(X), X) / n_rows

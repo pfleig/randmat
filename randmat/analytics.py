@@ -17,7 +17,7 @@ def Gaussian(sig):
     x = np.linspace(-3*sig, 3*sig, 1000)
     gauss = lambda x: np.exp(-x**2/(2*sig**2)) / np.sqrt(2.*np.pi*sig**2)
 
-    return x, gauss
+    return x, gauss(x)
 
 
 def Beta_distribution_GGmodel(m):
